@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}" />
+</head>
+<body>
+
+<h1>Update</h1>
+<div class="add_new_form">
+    <form th:action="@{/upload }" th:object="${user}" method="post">
+        <input type="hidden" th:field="*{id}"  />
+        <input type="text" th:field="*{name}" th:placeholder=" ${user.name} " />
+        <input type="text" th:field="*{email}" th:placeholder=" ${user.email} " />
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+</div>
+<a th:href="@{/}">Go Back</a>
+
+</body>
+</html>
